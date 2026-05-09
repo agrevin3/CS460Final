@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Start node | The start node acts as the source for each iteration to all the other nodes|
+| relic in set M | May need to know the shortest path from a relic to the end(following each other node) |
 
 ### Part 2b: Distance Storage
 
