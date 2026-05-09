@@ -9,12 +9,14 @@
 
 ---
 
-## Entry 1 – [May 9th at 1pm]: Initial Plan
+## Entry 1 – [May 9th at 3pm]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
 _Your entry here._
+
+My plan is to first understand the problem and start thinking about how each of the functions in the torchbearer template can be implemented and used together to execute the algorithm. I'm hoping to just follow the instructions step by step for implementation, starting with the select_sources, run_dijkstra, and precompute_distances() functions so I can use each later while searching for the most optimal path. I expect it to be difficult to explore and find the optimal route, I see those as the core functions of the problem. Finally, I plan to test by adjusting the given input in main.
 
 
 ---
