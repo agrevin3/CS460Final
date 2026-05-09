@@ -34,7 +34,7 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return "The single shortest-path method is usually a single greedy algorithm, which doesn't always work in cases like this. This is because we can't decide the shortest path without considering future path combinations and comparing the shortest results."
 
 
 # =============================================================================
