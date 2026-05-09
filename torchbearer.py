@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Amelia Grevin
+Student ID:   827571622
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,7 @@ def explain_problem():
 
     TODO
     """
-    return "The single shortest-path method is usually a single greedy algorithm, which doesn't always work in cases like this. This is because we can't decide the shortest path without considering future path combinations and comparing the shortest results."
+    return "*The single shortest-path method is usually a single greedy algorithm, which doesn't always work in cases like this. This is because we can't decide the shortest path without considering future path combinations and comparing the shortest results. /n *We need to choose what path to take with the shortest path/min cost total. \n*This requires a search to find the best, most optimal path. Other methods, such as greedy, will likely only find one path, but it isn't compared to the other, possibly more minimal, solutions."
 
 
 # =============================================================================
