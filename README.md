@@ -17,7 +17,7 @@
 > per question. Each bullet should be 1-2 sentences max
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  *The single shortest-path method is usually a single greedy algorithm, which doesn't always work in cases like this. This is because we can't decide the shortest path without considering future path combinations and comparing the shortest results.
 
 - **What decision remains after all inter-location costs are known:**
   _Your answer here._
