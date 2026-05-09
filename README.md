@@ -14,7 +14,7 @@
 ## Part 1: Problem Analysis
 
 > Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
+> per question. Each bullet should be 1-2 sentences max
 
 - **Why a single shortest-path run from S is not enough:**
   _Your answer here._
