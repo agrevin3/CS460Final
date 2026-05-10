@@ -69,6 +69,7 @@ def select_sources(spawn, relics, exit_node):
         #The rest of the list should be filled with the relic list nodes
         else:
             sourceNodes.append(relics[i-1])
+    #Return it as a set so there are no dupes
     return list(set(sourceNodes))
 
 
@@ -88,7 +89,38 @@ def run_dijkstra(graph, source):
 
     TODO
     """
-    pass
+    #Code framed after the canvas graphs practice quiz example!
+    #Node dist should store all the node values and their distance from the start source
+    nodeDist = {}
+    #This should initialize all their costs at "infinity"
+    for i in graph:
+        nodeDist[i] = 999999
+    #Source cost should be 0 b/c it is at a distance 0 to itself
+    nodeDist[source] = 0
+    cost =0
+    #The priotity queue should store the cost value and the source compared 
+    pq = [(cost,source)]
+    #This while loop should work until the pq is empty
+    while(len(pq)!=0):
+        shortestVal =0
+        #This loop finds the smallest cost up to the current index
+        for i in range(len(pq)):
+            if(pq[i][0]<pq[shortestVal][0]):
+                shortestVal=i
+        #pop the shortest cost node!
+        (curr, u) = pq.pop(shortestVal)
+        #Check if the current shortest dist is greater than the dist to node u(the acc current node)
+        if((curr)>nodeDist[u]):
+            continue
+        #The loop should check all nearby nodes and see if there is a cheaper known choice
+        for i in range(len(graph[u])):
+            v = graph[u][i][0]
+            w = graph[u][i][1]
+            #Here we can update the pq with a shorter path if one is found
+            if(nodeDist[u]+w<nodeDist[v]):
+                nodeDist[v] = nodeDist[u]+w
+                pq.append((nodeDist[v],v))
+    return nodeDist
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
@@ -295,5 +327,13 @@ def _run_tests():
 
 
 if __name__ == "__main__":
-    #print(select_sources('S',['B','C','D'],'T'))
+    print(select_sources('S',['B','C','D'],'T'))
+    graph = {
+        'S': [('B', 1), ('C', 2), ('D', 2)],
+        'B': [('D', 1), ('T', 1)],
+        'C': [('B', 1), ('T', 1)],
+        'D': [('B', 1), ('C', 1)],
+        'T': []
+    }
+    print(run_dijkstra(graph, 'S'))
     _run_tests()
