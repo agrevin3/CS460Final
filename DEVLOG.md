@@ -21,12 +21,14 @@ My plan is to first understand the problem and start thinking about how each of 
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [May 10th at 4pm]: [Unexpected issue]
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
 _Your entry here._
+
+A large issue I had when I started the coding portion was actually the testing. I thought that the code provided in main would run smoothly with my code but for some reason it caused an error. For now, it has worked to comment out the primary main testing function and create testing print statements of my own. These are at least showing me that each function I work on one at a time is running as intended.
 
 ---
 
