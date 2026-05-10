@@ -55,10 +55,10 @@
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** number of relic chambers + start node+ end node
+- **Cost per run:** m log n
+- **Total complexity:** (M+2)(m log n)
+- **Justification (one line):** M+2 represents the set of relic chambers + the starting and ending node and m log n is the cost of a single min cost run
 
 ---
 
