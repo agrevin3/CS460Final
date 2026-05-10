@@ -140,7 +140,14 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    #Create another dict to hold the costs starting at each source node
+    distFromEach = {}
+    #Take them from the select source function
+    everySourceNode = select_sources(spawn, relics, exit_node)
+    #For loop should run dijkstras at each source node
+    for i in everySourceNode:
+        distFromEach[i] = run_dijkstra(graph,i)
+    return distFromEach
 
 
 # =============================================================================
@@ -336,4 +343,5 @@ if __name__ == "__main__":
         'T': []
     }
     print(run_dijkstra(graph, 'S'))
+    print(precompute_distances(graph, 'S', ['B', 'C', 'D'], 'T'))
     _run_tests()
