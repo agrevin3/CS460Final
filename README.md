@@ -37,6 +37,7 @@
 |---|---|
 | Start node | The start node acts as the source for each iteration to all the other nodes|
 | relic in set M | May need to know the shortest path from a relic to the end(following each other node) |
+| End node | I added the end node later on because I included it in the source selection function in the case that it is the only node in the set|
 
 ### Part 2b: Distance Storage
 
