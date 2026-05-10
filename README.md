@@ -45,11 +45,11 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name |priority queue/dictionary|
+| What the keys represent |the keys are the S, R, and T values, meaning the start, end, and all relic nodes|
+| What the values represent |The values represent the cost from a start node to the current node(or chamber)|
+| Lookup time complexity |O(1)|
+| Why O(1) lookup is possible |This complexity is possible because of the dictionary layout, you can directly look up values|
 
 ### Part 2c: Precomputation Complexity
 
