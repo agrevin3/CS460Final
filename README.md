@@ -73,29 +73,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  The invarient here is that the minimum path for this iteration of the active source node to the end node is found.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  Nodes that arent yet finalized should hold the minumum path cost so far, if not iterated though it should hold infinity.
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  This is because the cost from the source node is always 0. We initialize nodeDist[source] = 0.
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  The minimum cost/distance node is always correct because it is already compared to all possible options and selected as the shortest path/min cost.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  Each source node should contain a min cost value/shortest path.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+We need to make sure invarients remain true so that the route selected also results in the minimum possible cost/shortest path.
 
 ---
 

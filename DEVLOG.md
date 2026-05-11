@@ -32,9 +32,9 @@ A large issue I had when I started the coding portion was actually the testing. 
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [May 11th at 12pm]: [More work+future plan]
 
-_Your entry here._
+Today I worked on question 3, looking at the invarients. I am hoping that I can continue my work today on question 4 and hopefully complete question 5 and 6 on the last 2-3 days. I expect questions 5-6 to cause the most difficulties so am trying to leave time for them! Also I need to re-integrate the testing section in main.
 
 ---
 
@@ -53,8 +53,8 @@ _Your entry here._
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
+| Part 1: Problem Analysis | 1 hour |
+| Part 2: Precomputation Design | 2-3 hours |
 | Part 3: Algorithm Correctness | |
 | Part 4: Search Design | |
 | Part 5: State and Search Space | |
