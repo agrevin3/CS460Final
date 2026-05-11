@@ -164,7 +164,7 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return "*The invarient here is that the minimum path for this iteration of the active source node to the end node is found. \n *Nodes that arent yet finalized should hold the minumum path cost so far, if not iterated though it should hold infinity. \n *This is because the cost from the source node is always 0. We initialize nodeDist[source] = 0. \n *The minimum cost/distance node is always correct because it is already compared to all possible options and selected as the shortest path/min cost. \n *Each source node should contain a min cost value/shortest path. *We need to make sure invarients remain true so that the route selected also results in the minimum possible cost/shortest path."
 
 
 # =============================================================================
