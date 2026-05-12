@@ -38,16 +38,16 @@ Today I worked on question 3, looking at the invarients. I am hoping that I can 
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [Nay 12th at 12pm]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
-_Your entry here._
+I just completed implementation and now all test cases are running. I think I can improve a little on compressing my code. I definately take some less than efficient approaches. For example, I know that the dijkstras alg should be done with the pq buy I did a manual loop to find the shortest value. I did this because I couldn't figure out how to simplify. If I had more time I would work to improve that, as well as simplifications on other parts of the code. 
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – [May 12th]: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
@@ -55,10 +55,10 @@ _Your entry here._
 |---|---|
 | Part 1: Problem Analysis | 1 hour |
 | Part 2: Precomputation Design | 2-3 hours |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
+| Part 3: Algorithm Correctness | 1 hour|
+| Part 4: Search Design | 1 hour|
+| Part 5: State and Search Space | 5 hours|
+| Part 6: Pruning | 1 hour|
+| Part 7: Implementation |Above times include implementation|
+| README and DEVLOG writing ||
 | **Total** | |
