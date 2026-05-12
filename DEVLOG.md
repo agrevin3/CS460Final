@@ -14,8 +14,6 @@
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
-
 My plan is to first understand the problem and start thinking about how each of the functions in the torchbearer template can be implemented and used together to execute the algorithm. I'm hoping to just follow the instructions step by step for implementation, starting with the select_sources, run_dijkstra, and precompute_distances() functions so I can use each later while searching for the most optimal path. I expect it to be difficult to explore and find the optimal route, I see those as the core functions of the problem. Finally, I plan to test by adjusting the given input in main.
 
 
@@ -26,7 +24,6 @@ My plan is to first understand the problem and start thinking about how each of 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
 
 A large issue I had when I started the coding portion was actually the testing. I thought that the code provided in main would run smoothly with my code but for some reason it caused an error. For now, it has worked to comment out the primary main testing function and create testing print statements of my own. These are at least showing me that each function I work on one at a time is running as intended.
 

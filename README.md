@@ -4,17 +4,7 @@
 **Student ID:** 827571622
 **Course:** CS 460 – Algorithms | Spring 2026
 
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
-
----
-
 ## Part 1: Problem Analysis
-
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max
 
 - **Why a single shortest-path run from S is not enough:**
   *The single shortest-path method is usually a single greedy algorithm, which doesn't always work in cases like this. This is because we can't decide the shortest path without considering future path combinations and comparing the shortest results.
@@ -31,8 +21,6 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
 | Source Node Type | Why it is a source |
 |---|---|
 | Start node | The start node acts as the source for each iteration to all the other nodes|
@@ -40,8 +28,6 @@
 | End node | I added the end node later on because I included it in the source selection function in the case that it is the only node in the set|
 
 ### Part 2b: Distance Storage
-
-> Fill in the table. No prose required.
 
 | Property | Your answer |
 |---|---|
@@ -53,8 +39,6 @@
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
 - **Number of Dijkstra runs:** number of relic chambers + start node+ end node
 - **Cost per run:** m log n
 - **Total complexity:** (M+2)(m log n)
@@ -64,13 +48,7 @@
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
-
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
   The invarient here is that the minimum path for this iteration of the active source node to the end node is found.
@@ -79,8 +57,6 @@
   Nodes that arent yet finalized should hold the minumum path cost so far, if not iterated though it should hold infinity.
 
 ### Part 3b: Why Each Phase Holds
-
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   This is because the cost from the source node is always 0. We initialize nodeDist[source] = 0.
@@ -93,8 +69,6 @@
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
-
 We need to make sure invarients remain true so that the route selected also results in the minimum possible cost/shortest path.
 
 ---
@@ -102,9 +76,6 @@ We need to make sure invarients remain true so that the route selected also resu
 ## Part 4: Search Design
 
 ### Why Greedy Fails
-
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
 
 - **The failure mode:** Greedy fails to see the big picture and only chooses the immediate best option
 - **Counter-example setup:** Say the nodes and the costs to each are: s-a:3 s-b:1 a-b:2 b-c:5 c-a:5 a-T:5 c-T:1
@@ -114,8 +85,6 @@ We need to make sure invarients remain true so that the route selected also resu
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
 - The algorithm should explore the order in which relics are explored and then select the minimum cost amongst all ordered paths.
 
 ---
@@ -124,9 +93,6 @@ We need to make sure invarients remain true so that the route selected also resu
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
 | Current location |current_loc |string |the active relic we are exploring|
@@ -134,8 +100,6 @@ We need to make sure invarients remain true so that the route selected also resu
 | Fuel cost so far |cost_so_far|float|The current cost of visiting each relic so far|
 
 ### Part 5b: Data Structure for Visited Relics
-
-> Fill in the table.
 
 | Property | Your answer |
 |---|---|
@@ -147,8 +111,6 @@ We need to make sure invarients remain true so that the route selected also resu
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
 - **Worst-case number of orders considered:** k!
 - **Why:** It may check every possible order of relics
 
@@ -158,15 +120,11 @@ We need to make sure invarients remain true so that the route selected also resu
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
 - **What is tracked:** The minimum path cost up to the current path explored 
 - **When it is used:** When comparing a new path cost to find minimum across all paths
 - **What it allows the algorithm to skip:** It can skip any paths whose cost gets greater than the min val during a stage of exploring
 
 ### Part 6b: Lower Bound Estimation
-
-> Three bullets.
 
 - **What information is available at the current state:** current_loc, cost_so_far, relics_remaining
 - **What the lower bound accounts for:** The min cost achieved at any point in execution
@@ -174,15 +132,11 @@ We need to make sure invarients remain true so that the route selected also resu
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
 Pruning here is safe because the cost can not decrease as we move through a path. That means that if at some stage of the path the value exceeds the min cost, it will never be the min cost path.
 
 ---
 
 ## References
-
-> Bullet list. If none beyond lecture notes, write that.
 
 - Canvas
 - The Dijkstra's algorithm code from the practice quiz on canvas(modified)
@@ -190,4 +144,4 @@ Pruning here is safe because the cost can not decrease as we move through a path
 - FelixTechTips youtube video on dijkstras
 - grinell.edu - priority queue ideology
 - launchschool.com - time complexity for recursive functions
-- safari searches
+- safari searches + probably more I forgot to take note of
