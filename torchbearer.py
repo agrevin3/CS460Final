@@ -208,7 +208,20 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    minCostPath = [99999, []]
+    current_loc = spawn
+    relics_remaining = set(relics)
+    relics_visited_order = []
+    cost_so_far = 0
+    best = minCostPath
+    _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
+             cost_so_far, exit_node, best)
+    
+    if(minCostPath[0]!=(99999)):
+        return (minCostPath[0], minCostPath[1])
+    else:
+        return (float('inf'), [])
+
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
