@@ -181,7 +181,7 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return "*Greedy fails to see the big picture and only chooses the immediate best option \n *Say the nodes and the costs to each are: s-a:3 s-b:1 a-b:2 b-c:5 c-a:5 a-T:5 c-T:1 \n *Greedy picks this path: s-a, a-b, b-c, c-T \n *Optimal would pick this path: s-b, b-c, c-a, a-T *Greedy doesn't consider all alternate paths; it simply chooses the immediate best choice, missing the potential cheaper total costs \n *The algorithm should explore the order in which relics are explored and then select the minimum cost amongst all ordered paths."
 
 
 # =============================================================================
