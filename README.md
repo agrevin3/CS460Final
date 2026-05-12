@@ -129,9 +129,9 @@ We need to make sure invarients remain true so that the route selected also resu
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location |current_loc |string |the active relic we are exploring|
+| Relics already collected |relics_visited_order|list of strings|A list containing all relics that have been explored|
+| Fuel cost so far |cost_so_far|float|The current cost of visiting each relic so far|
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -139,18 +139,18 @@ We need to make sure invarients remain true so that the route selected also resu
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen |list|
+| Operation: check if relic already collected | Time complexity: n|
+| Operation: mark a relic as collected | Time complexity: n|
+| Operation: unmark a relic (backtrack) | Time complexity: 1|
+| Why this structure fits | The list shows which relics remain after each stage and are yet to be explored recursively|
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** k!
+- **Why:** It may check every possible order of relics
 
 ---
 
@@ -160,23 +160,23 @@ We need to make sure invarients remain true so that the route selected also resu
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** The minimum path cost up to the current path explored 
+- **When it is used:** When comparing a new path cost to find minimum across all paths
+- **What it allows the algorithm to skip:** It can skip any paths whose cost gets greater than the min val during a stage of exploring
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** current_loc, cost_so_far, relics_remaining
+- **What the lower bound accounts for:** The min cost achieved at any point in execution
+- **Why it never overestimates:** The min cost from the first path is added, and then no higher cost would be added, only the min from the remaining paths is selected because of min checks
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+Pruning here is safe because the cost can not decrease as we move through a path. That means that if at some stage of the path the value exceeds the min cost, it will never be the min cost path.
 
 ---
 
@@ -184,4 +184,10 @@ We need to make sure invarients remain true so that the route selected also resu
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- Canvas
+- The Dijkstra's algorithm code from the practice quiz on canvas(modified)
+- Medium.com - all about pruning
+- FelixTechTips youtube video on dijkstras
+- grinell.edu - priority queue ideology
+- launchschool.com - time complexity for recursive functions
+- safari searches
