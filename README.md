@@ -106,17 +106,17 @@ We need to make sure invarients remain true so that the route selected also resu
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy fails to see the big picture and only chooses the immediate best option
+- **Counter-example setup:** Say the nodes and the costs to each are: s-a:3 s-b:1 a-b:2 b-c:5 c-a:5 a-T:5 c-T:1
+- **What greedy picks:** Greedy picks this path: s-a, a-b, b-c, c-T
+- **What optimal picks:** Optimal would pick this path: s-b, b-c, c-a, a-T
+- **Why greedy loses:** Greedy doesn't consider all alternate paths; it simply chooses the immediate best choice, missing the potential cheaper total costs
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm should explore the order in which relics are explored and then select the minimum cost amongst all ordered paths.
 
 ---
 
