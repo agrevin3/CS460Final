@@ -208,17 +208,20 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
+    #setting initial values to be sent in the explore call
     minCostPath = [99999, []]
     current_loc = spawn
     relics_remaining = set(relics)
     relics_visited_order = []
     cost_so_far = 0
     best = minCostPath
+    #Call explore to do the work of determining min cost path
     _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
              cost_so_far, exit_node, best)
-    
+    #If the min path isnt placeholder then return the min cost and the visited list in order
     if(minCostPath[0]!=(99999)):
         return (minCostPath[0], minCostPath[1])
+    #Else return placeholder
     else:
         return (float('inf'), [])
 
@@ -253,7 +256,35 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+    cost =0
+    minCostPath = best
+    minPath = list(relics_visited_order)
+    #base case
+    #Check if relics list is empty and then add actual cost and path to minCostPath
+    if(len(relics_remaining)<=0):
+        cost = cost_so_far + dist_table[current_loc][exit_node]
+        if(cost >= minCostPath[0]):
+            return 
+        else:
+            minCostPath[0] = cost
+            minCostPath[1] = minPath
+        return
+
+    #This is the pruning step, it checks if the current cost is greater than the min, meaning we don't need to explore it any further b/c it wont be used
+    #It is safe to do this because the cost can not decrease at any point along the path
+    if(cost_so_far >= minCostPath[0]):
+        return
+    #This for loop should iterate for each relic remaining
+    upRelics = list(relics_remaining)
+    for i in range(len(list(relics_remaining))):
+        #First create an empty list that we can add all relics to left to explore
+        rem = []
+        #Add those relics in to the list here
+        for j in range(len(upRelics)):
+            if(j!=i):
+                rem.append(upRelics[j])
+        #Enter values into recursive call! 
+        _explore(dist_table, upRelics[i], rem, relics_visited_order+ [upRelics[i]], cost_so_far+dist_table[current_loc][upRelics[i]], exit_node, minCostPath)
 
 
 # =============================================================================
@@ -277,7 +308,11 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    #Solve function by finding the min distances 
+    #then find the best route by plugging in the minDist to find the min Cost across all paths
+    minDists= precompute_distances(graph, spawn, relics, exit_node)
+    minPath= (find_optimal_route(minDists, spawn, relics, exit_node))
+    return minPath
 
 
 # =============================================================================
@@ -287,7 +322,7 @@ def solve(graph, spawn, relics, exit_node):
 
 def _run_tests():
     print("Running provided tests...")
-    """
+    
     # Test 1: Spec illustration. Optimal cost = 4.
     graph_1 = {
         'S': [('B', 1), ('C', 2), ('D', 2)],
@@ -343,18 +378,18 @@ def _run_tests():
     print("  Test 5 passed  explanation functions are non-empty")
 
     print("\nAll provided tests passed.")
-    """
+    
 
 
 if __name__ == "__main__":
-    print(select_sources('S',['B','C','D'],'T'))
-    graph = {
+    #print(select_sources('S',['B','C','D'],'T'))
+    """graph = {
         'S': [('B', 1), ('C', 2), ('D', 2)],
         'B': [('D', 1), ('T', 1)],
         'C': [('B', 1), ('T', 1)],
         'D': [('B', 1), ('C', 1)],
         'T': []
-    }
-    print(run_dijkstra(graph, 'S'))
-    print(precompute_distances(graph, 'S', ['B', 'C', 'D'], 'T'))
+    }"""
+    #print(run_dijkstra(graph, 'S'))
+    #print(precompute_distances(graph, 'S', ['B', 'C', 'D'], 'T'))
     _run_tests()
