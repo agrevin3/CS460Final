@@ -211,7 +211,7 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     #setting initial values to be sent in the explore call
     minCostPath = [99999, []]
     current_loc = spawn
-    relics_remaining = set(relics)
+    relics_remaining = list(relics)
     relics_visited_order = []
     cost_so_far = 0
     best = minCostPath
