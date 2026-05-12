@@ -144,4 +144,4 @@ Pruning here is safe because the cost can not decrease as we move through a path
 - FelixTechTips youtube video on dijkstras
 - grinell.edu - priority queue ideology
 - launchschool.com - time complexity for recursive functions
-- safari searches + probably more I forgot to take note of
+- safari searches
