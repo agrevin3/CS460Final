@@ -138,10 +138,11 @@ Pruning here is safe because the cost can not decrease as we move through a path
 
 ## References
 
-- Canvas
-- The Dijkstra's algorithm code from the practice quiz on canvas(modified)
-- Medium.com - all about pruning
-- FelixTechTips youtube video on dijkstras
-- grinell.edu - priority queue ideology
-- launchschool.com - time complexity for recursive functions
-- safari searches
+- Canvas-graph algorithms-dijkstras video specifically for understanding the searching logic of each path exploration
+-canvas-bigO examples sheet- trying to figure out the time complexities of each part of the algorithm
+- The Dijkstra's algorithm code from the practice quiz on canvas(modified)- ended up not really using a pq in the same way but structured the code based on the example
+- Medium.com - The art of pruning - Trying to refresh my memory on what pruning is and why it is necessary- answer: to limit work the code has to do.
+- FelixTechTips youtube video on dijkstras- used this as well as the canvas video for understanding dijkstras again.
+- grinell.edu - priority queue ideology- didn't even really end up using much from this- used canvas module instead but was a big reference that i looked at
+- launchschool.com - time and space complexity for recursive algorithms-used to practice time complexity given code
+-Mostly canvas resources+safari searches
